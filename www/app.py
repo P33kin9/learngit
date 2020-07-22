@@ -53,7 +53,7 @@ async def auth_factory(app, handler):
                 request.__user__ = user
         if request.path.startswith('/manage/') and (request.__user__ is None or not request.__user__.admin):
             return web.HTTPFound('/signin')
-        return ( await handler(request))
+        return (await handler(request))
     return auth
             
 
@@ -124,7 +124,7 @@ def datetime_filter(t):
 
 
 async def init(loop):
-    await orm.create_pool(loop=loop,**configs.db) 
+    await orm.create_pool(loop=loop, **configs.db)
     app = web.Application(middlewares=[
         logger_factory, auth_factory, response_factory
     ])

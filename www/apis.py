@@ -16,7 +16,7 @@ class Page(object):
     def __init__(self, item_count, page_index=1, page_size=10):
         '''
         Init Pagination by item_count, page_index and page_size.
-        >>> p1  =Page(100, 1)
+        >>> p1  = Page(100, 1)
         >>> p1.page_count
         10
         >>> p1.offset
